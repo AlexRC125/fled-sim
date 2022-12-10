@@ -1,0 +1,75 @@
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+}
+.grass, .sky, .road{
+    position: relative;
+}
+
+.sky {
+    height: 40%;
+    background: skyblue;
+}
+
+.sand{
+    height: 30%;
+    background: rgb(223, 209, 81);
+}
+
+.road{
+    height: 40%;
+    background: dimgrey;
+    box-sizing: border-box;
+    border-top: 10px solid dimgrey;
+    border-bottom: 10px solid dimgrey;
+    width: 100%;
+}
+
+.plane {
+    position: absolute;
+  top: 50px;
+  left: 400px;
+  animation: fly 5s infinite;
+}
+.car {
+    position: absolute;
+    top: -40px;
+    left: 0px;
+    animation: drive 20s both infinite linear;
+  }
+
+.cloud{
+    position: absolute;
+  }
+  .cloud:nth-child(1){
+    width: 200px;
+    top: 120px;
+    opacity: 0.5;
+    animation: wind 60s linear infinite reverse;
+  }
+  .cloud:nth-child(2){
+    width: 300px;
+    top: 0;
+    animation: wind 40s linear infinite reverse;
+  }
+.bird {
+    position: absolute;
+    right: 800px;
+    animation: fly 7s infinite;
+}
+@keyframes fly {
+    50% {
+        transform: translateY(6.25em);
+    }
+}
+
+@keyframes drive{
+    from{ transform: translateX(-200px)}
+    to { transform: translateX(1000px)}
+  }
+  @keyframes wind{
+    from{left: -300px}
+    to{left: 100%}
+  }
